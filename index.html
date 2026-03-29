@@ -318,7 +318,7 @@
             <li><span class="ok">✓</span> Live page preview</li>
             <li><span class="ok">✓</span> Save PDF (Portrait / Landscape / Square)</li>
             <li><span class="ok">✓</span> Adjustable scan speed &amp; quality</li>
-            <li><span class="dim">✗</span> Heyzine PDF: DEMO WATERMARK on every page</li>
+            <li><span class="dim">✗</span> DEMO WATERMARK on every page</li>
           </ul>
           <a href="#download" class="btn btn--outline">Download free</a>
         </div>
@@ -331,9 +331,9 @@
           </div>
           <ul class="plan-features">
             <li><span class="ok">✓</span> Everything in Free</li>
-            <li><span class="ok">✓</span> Heyzine: original PDF, no watermark</li>
+            <li><span class="ok">✓</span> No watermark on output PDF</li>
             <li><span class="ok">✓</span> Priority support</li>
-            <li><span class="ok">✓</span> All future updates included</li>
+            <li><span class="ok">✓</span> Unlimited conversions</li>
           </ul>
           <a href="https://store.payproglobal.com/checkout?products[1][id]=130709" class="btn btn--primary">Get PRO licence</a>
         </div>
@@ -389,6 +389,20 @@
       <p class="footer__copy">© 2026 Flipbook to PDF · <a href="https://flipbook-to-pdf.github.io" target="_blank">Free Flipbook to PDF Converter & Downloader</a></p>
     </div>
   </footer>
-
+    <script type="text/javascript">
+        window.lhnJsSdkInit = function () {
+            lhnJsSdk.setup = {
+                application_id: "46e208b4-6665-455d-a93a-8fe887ef8f3e",
+                application_secret: "3a6262c5d50445ff88ce497e8c68b08242c4f859229c4374bb"
+            };
+            lhnJsSdk.controls = [{ type: "hoc", id: "a7b4b662-1c4c-484f-a648-42f4cb609f1e" }];
+        };
+        (function (d, s) {
+            var newjs, lhnjs = d.getElementsByTagName(s)[0];
+            newjs = d.createElement(s);
+            newjs.src = "https://developer.livehelpnow.net/js/sdk/lhn-jssdk-current.min.js";
+            lhnjs.parentNode.insertBefore(newjs, lhnjs);
+        }(document, "script"));
+    </script>
 </body>
 </html>
