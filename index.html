@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="request-service.css" />
+  <script src="request-device.js"></script>
+  <script src="request-service-config.js" defer></script>
+  <script src="request-service.js" defer></script>
 </head>
 <body>
 
@@ -23,6 +27,7 @@
         <a href="#features">Features</a>
         <a href="#howto">How it works</a>
         <a href="#supported">Supported sites</a>
+        <a href="#request-pdf" class="fbr-nav-link">PDF by email</a>
         <a href="#download" class="nav__cta">Download free</a>
       </nav>
     </div>
@@ -65,6 +70,7 @@
             Chrome Extensions
           </a>
         </div>
+        <p class="hero__note"><a href="#request-pdf">Prefer us to do it? Get your PDF by email</a></p>
         <p class="hero__note">Free · No account required · v3.0.0</p>
       </div>
       <div class="hero__visual">
@@ -83,6 +89,50 @@
       </div>
     </div>
   </section>
+
+  <section class="fbr-service" id="request-pdf" aria-labelledby="fbr-title">
+    <div class="fbr-container">
+      <div class="fbr-intro">
+        <span class="fbr-eyebrow">DONE FOR YOU · PDF BY EMAIL</span>
+        <p class="fbr-mobile-note">On Android, iPhone or iPad? No installation needed. We’ll download the flipbook for you.</p>
+        <h2 id="fbr-title">Send us the link.<br><span>We’ll send you the PDF.</span></h2>
+        <p class="fbr-lead">Tell us which flipbook you need and receive it as a PDF by email within a few hours. Choose a free copy with a watermark or a clean PDF with a one-time payment.</p>
+      </div>
+      <div class="fbr-layout">
+        <div class="fbr-form-card">
+          <div class="fbr-form-heading"><span class="fbr-mail-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span><div><h3>Request your PDF</h3><p>We’ll take care of the download.</p></div></div>
+          <form id="fbr-form" class="fbr-form" action="request-pdf.php" method="post">
+            <input type="hidden" name="token" id="fbr-token" value="">
+            <div class="fbr-honeypot" aria-hidden="true"><label for="fbr-website">Leave this field empty</label><input type="text" id="fbr-website" name="website" tabindex="-1" autocomplete="off"></div>
+            <div class="fbr-field"><label for="fbr-name">Your name</label><input type="text" id="fbr-name" name="name" autocomplete="name" minlength="2" maxlength="100" placeholder="Your name" required></div>
+            <div class="fbr-field"><label for="fbr-email">Email address</label><input type="email" id="fbr-email" name="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="you@example.com" aria-describedby="fbr-email-note" required><small id="fbr-email-note">We’ll send your PDF and any request updates here.</small></div>
+            <div class="fbr-field"><label for="fbr-url">Flipbook URL</label><input type="url" id="fbr-url" name="url" inputmode="url" autocomplete="url" maxlength="2048" placeholder="https://…" spellcheck="false" required></div>
+            <fieldset class="fbr-choice"><legend>Which PDF would you like?</legend><label class="fbr-choice-label"><input type="radio" name="edition" value="free" checked><span><strong>Free PDF</strong><small>With a watermark · $0</small></span><b>FREE</b></label><label class="fbr-choice-label"><input type="radio" name="edition" value="clean"><span><strong>PDF without watermark</strong><small>One-time payment · from $12</small></span></label></fieldset>
+            <div class="fbr-field" id="fbr-pages-field" hidden><label for="fbr-pages">Number of pages <span>(optional)</span></label><input type="number" id="fbr-pages" name="pages" min="1" max="100000" step="1" inputmode="numeric" placeholder="Leave blank if you’re not sure"><p class="fbr-price-hint" id="fbr-estimate" aria-live="polite">We’ll check the page count and confirm the price before payment.</p></div>
+            <p class="fbr-contact-note">We’ll use your details to handle this request and deliver your PDF. Please request only content you own or have permission to download.</p>
+            <button type="submit" class="fbr-submit" id="fbr-submit">Send PDF request</button>
+            <p class="fbr-no-payment">No payment is taken when you submit this form.</p>
+            <div class="fbr-feedback" id="fbr-feedback" role="status" aria-live="polite" tabindex="-1" hidden></div>
+            <noscript><p>Please enable JavaScript to use this form, or email your name and flipbook link to <a href="mailto:webservice2t@gmail.com">webservice2t@gmail.com</a>.</p></noscript>
+          </form>
+        </div>
+        <div class="fbr-details">
+          <div class="fbr-free"><div><span class="fbr-eyebrow">START FOR FREE</span><h3>Your PDF. With a watermark.</h3><p>Send your link and we’ll email you a free watermarked PDF.</p></div><strong>$0</strong></div>
+          <div class="fbr-pricing-header"><h3>Prefer no watermark?</h3><p>From just <strong>$12 per flipbook.</strong> Pay once, keep your PDF. No subscription.</p></div>
+          <div class="fbr-prices" aria-label="Watermark-free PDF prices in US dollars">
+            <div class="fbr-price"><span>Fewer than 50 pages</span><strong>$12<small>USD</small></strong><p>One flipbook · One payment</p></div>
+            <div class="fbr-price"><span>50–100 pages</span><strong>$16<small>USD</small></strong><p>One flipbook · One payment</p></div>
+            <div class="fbr-price"><span>101–200 pages</span><strong>$24<small>USD</small></strong><p>One flipbook · One payment</p></div>
+            <div class="fbr-price"><span>201–500 pages</span><strong>$39<small>USD</small></strong><p>One flipbook · One payment</p></div>
+          </div>
+          <p class="fbr-pricing-note">Not sure how many pages? Just send the link. We’ll check it and confirm the price. For more than 500 pages, ask us for a quote.</p>
+          <div class="fbr-delivery"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><h4>Delivered within a few hours</h4><p>We’ll check your link and email the PDF to you. For a PDF without a watermark, we’ll send payment details first and deliver after payment. If the flipbook cannot be downloaded, we’ll let you know.</p></div></div>
+          <a class="fbr-support" href="mailto:webservice2t@gmail.com">Questions? Contact webservice2t@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ── SUPPORTED LOGOS STRIP ─────────────────────────────────────── -->
   <div class="strip">
