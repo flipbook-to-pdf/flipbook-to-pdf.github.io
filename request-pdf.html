@@ -2,10 +2,9 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#4c46e8">
 <title>Get your flipbook as a PDF by email — Flipbook to PDF</title>
 <meta name="description" content="Receive a free PDF preview of the first 20–25 flipbook pages, without a watermark, by email within a few hours. Complete PDFs from $12. One-time payment. No subscription.">
-  <link rel="stylesheet" href="request-service.css" />
-  <script src="request-device.js"></script>
-  <script src="request-service-config.js" defer></script>
-  <script src="request-service.js" defer></script>
+  <link rel="stylesheet" href="request-service.css?v=4" />
+  <script src="request-device.js?v=4"></script>
+  <script src="request-service.js?v=4" defer></script>
 </head><body class="fbr-standalone">
 <header class="fbr-standalone-header"><a class="fbr-standalone-brand" href="index.html"><span>F</span>Flipbook to PDF</a><a class="fbr-standalone-back" href="index.html#download">Desktop app &amp; extensions</a></header>
 <main>  <section class="fbr-service" id="request-pdf" aria-labelledby="fbr-title">
@@ -13,23 +12,22 @@
       <div class="fbr-intro">
         <span class="fbr-eyebrow">DONE FOR YOU · PDF BY EMAIL</span>
         <p class="fbr-mobile-note">On Android, iPhone or iPad? No installation needed. We’ll download the flipbook for you.</p>
-        <h1 id="fbr-title">Send us the link.<br><span>We’ll send you the PDF.</span></h1>
+        <h1 id="fbr-title">Get your flipbook<br><span>as a PDF by email.</span></h1>
         <p class="fbr-lead">Get a free PDF preview of the first 20–25 pages, without a watermark, by email within a few hours. Need the whole flipbook? Complete PDFs start at just $12, with a one-time payment.</p>
       </div>
       <div class="fbr-layout">
         <div class="fbr-form-card">
           <div class="fbr-form-heading"><span class="fbr-mail-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span><div><h3>Request your PDF</h3><p>We’ll take care of the download.</p></div></div>
-          <form id="fbr-form" class="fbr-form" action="request-pdf.php" method="post">
-            <input type="hidden" name="token" id="fbr-token" value="">
-            <div class="fbr-honeypot" aria-hidden="true"><label for="fbr-website">Leave this field empty</label><input type="text" id="fbr-website" name="website" tabindex="-1" autocomplete="off"></div>
+          <form id="fbr-form" class="fbr-form" action="mailto:webservice2t@gmail.com" method="get">
             <div class="fbr-field"><label for="fbr-name">Your name</label><input type="text" id="fbr-name" name="name" autocomplete="name" minlength="2" maxlength="100" placeholder="Your name" required></div>
             <div class="fbr-field"><label for="fbr-email">Email address</label><input type="email" id="fbr-email" name="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="you@example.com" aria-describedby="fbr-email-note" required><small id="fbr-email-note">We’ll send your PDF and any request updates here.</small></div>
             <div class="fbr-field"><label for="fbr-url">Flipbook URL</label><input type="url" id="fbr-url" name="url" inputmode="url" autocomplete="url" maxlength="2048" placeholder="https://…" spellcheck="false" required></div>
             <p class="fbr-contact-note">We’ll use your details to handle this request and deliver your PDF. Please request only content you own or have permission to download.</p>
-            <button type="submit" class="fbr-submit" id="fbr-submit">Send free preview request</button>
-            <p class="fbr-no-payment">No payment is taken when you submit this form.</p>
+            <button type="submit" class="fbr-submit" id="fbr-submit">SEND</button>
+            <p class="fbr-no-payment">SEND opens your default email app. Review the message and press Send there to finish.</p>
+            <p class="fbr-direct-email">Or send your name and flipbook URL directly to <a href="mailto:webservice2t@gmail.com">webservice2t@gmail.com</a>.</p>
             <div class="fbr-feedback" id="fbr-feedback" role="status" aria-live="polite" tabindex="-1" hidden></div>
-            <noscript><p>Please enable JavaScript to use this form, or email your name and flipbook link to <a href="mailto:webservice2t@gmail.com">webservice2t@gmail.com</a>.</p></noscript>
+            <noscript><p>Email your name and flipbook link to <a href="mailto:webservice2t@gmail.com">webservice2t@gmail.com</a>.</p></noscript>
           </form>
         </div>
         <div class="fbr-details">
@@ -39,7 +37,7 @@
             <div class="fbr-price"><span>Fewer than 50 pages</span><strong>$12<small>USD</small></strong><p>One flipbook · One payment</p></div>
             <div class="fbr-price"><span>50–100 pages</span><strong>$16<small>USD</small></strong><p>One flipbook · One payment</p></div>
             <div class="fbr-price"><span>101–200 pages</span><strong>$24<small>USD</small></strong><p>One flipbook · One payment</p></div>
-            <div class="fbr-price"><span>201–500 pages</span><strong>$35<small>USD</small></strong><p>One flipbook · One payment</p></div>
+            <div class="fbr-price"><span>201–500 pages</span><strong>$39<small>USD</small></strong><p>One flipbook · One payment</p></div>
           </div>
           <p class="fbr-pricing-note">Not sure how many pages? Just send the link. We’ll check it and confirm the price. For more than 500 pages, ask us for a quote.</p>
           <div class="fbr-delivery"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><h4>Delivered within a few hours</h4><p>We’ll check your link and email your free preview within a few hours. If you would like the complete PDF, we’ll confirm the price and send payment details. The complete PDF is delivered after payment. If the flipbook cannot be downloaded, we’ll let you know.</p></div></div>
