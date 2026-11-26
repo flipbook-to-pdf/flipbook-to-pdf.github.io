@@ -535,5 +535,52 @@
             lhnjs.parentNode.insertBefore(newjs, lhnjs);
         }(document, "script"));
     </script>
+	<script>
+(function () {
+  function updateEmailSection() {
+    const section = document.getElementById('request-pdf');
+    if (!section) return;
+
+    // Sezione in fondo, prima del footer, anche su mobile.
+    const footer = document.querySelector('footer');
+    if (footer) footer.before(section);
+    else document.body.appendChild(section);
+
+    const title = section.querySelector('#fbr-title');
+    if (title) {
+      title.textContent = 'Get your flipbook as a PDF by email';
+      title.style.setProperty('color', '#17213b', 'important');
+      title.style.setProperty('font-size', 'clamp(30px, 4vw, 46px)', 'important');
+      title.style.setProperty('line-height', '1.25', 'important');
+      title.style.setProperty('font-weight', '800', 'important');
+      title.style.setProperty('letter-spacing', '-0.5px', 'important');
+    }
+
+    const heading = section.querySelector('.fbr-free h3');
+    if (heading) heading.textContent = 'First 20–25 pages, free';
+
+    const description = section.querySelector('.fbr-free p');
+    if (description) {
+      description.textContent =
+        'Receive the first 20–25 pages as a PDF by email, without a watermark.';
+    }
+
+    const lead = section.querySelector('.fbr-lead');
+    if (lead) {
+      lead.textContent =
+        'Send us your flipbook link and receive a free PDF preview of the first 20–25 pages, without a watermark, within a few hours. Complete PDFs start at just $12. One-time payment. No subscription.';
+    }
+
+    const pricing = section.querySelector('.fbr-pricing-header h3');
+    if (pricing) pricing.textContent = 'Need the complete flipbook?';
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateEmailSection);
+  } else {
+    updateEmailSection();
+  }
+})();
+</script>
 </body>
 </html>
